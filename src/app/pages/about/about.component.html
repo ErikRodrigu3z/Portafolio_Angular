@@ -1,9 +1,15 @@
 <div class="ae-grid au-xs-ta-center au-mb-4">
 
-    <div *ngFor="let persona of info.equipo" class="ae-grid__item item-lg-4 ae-kappa au-mb-3"><img src="assets/img/team-1.jpg" alt="" class="au-mb-3">
-        <h5 class="ae-u-bolder au-mt-2">Robert T. Williams</h5>
-        <p class="ae-u-bolder au-mb-3">Graphic Designer</p>
-        <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p><a href="#0" class="ae-u-bolder au-underline">@robertwilliams</a>
+    <div *ngFor="let persona of _infoService.equipo" class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
+        <img [src]="persona.url" alt="" class="au-mb-3 bg-color-gray img-about-size">
+        <h5 class="ae-u-bolder au-mt-2">{{persona.nombre}}</h5>
+        <p class="ae-u-bolder au-mb-3">{{persona.subtitulo}}</p>
+        <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{persona.frase}}</p>
+        <a href="{{persona.twitter}}" class="ae-u-bolder au-underline">            
+            <svg _ngcontent-yox-c20="" style="width: 30px;">
+                <use _ngcontent-yox-c20="" xlink:href="assets/img/symbols.svg#icon-twitter"></use>
+            </svg>            
+        </a>
     </div>
 
     
