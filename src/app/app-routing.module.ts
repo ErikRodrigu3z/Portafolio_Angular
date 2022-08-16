@@ -7,8 +7,9 @@ import { ItemComponent } from './pages/item/item.component';
 const routes: Routes = [
   {path: 'portafolio' , component: PortafolioComponent},
   {path: 'about' , component: AboutComponent},
-  {path: 'item' , component: ItemComponent},
-  {path: '**' , pathMatch: 'full', redirectTo:'portafolio'}  
+  {path: 'item/:id' , component: ItemComponent},
+  {path: 'search/:termino' , pathMatch: 'full', redirectTo:'portafolio'},  
+  {path: '**' , pathMatch: 'full', redirectTo:'home'}  
 ];
 
 @NgModule({
