@@ -24,7 +24,7 @@ export class ProductosService {
           .subscribe( (resp: Producto[]) => {
             this.productos = resp;
             this.cargando = false;
-            resolve('');
+            resolve;            
           });
 
     });  
@@ -47,26 +47,17 @@ export class ProductosService {
       // aplicar el filtro
       this.filtrarProductos( termino );
     }
-
-
   }
 
-  private filtrarProductos( termino: string ) {
-
-    // console.log(this.productos);
-    this.productosFiltrado = [];
-
-    termino = termino.toLocaleLowerCase();
-
-    this.productos.forEach( prod => {
-
-      const tituloLower = prod.titulo.toLocaleLowerCase();
-
-      if ( prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf( termino ) >= 0  ) {
-        this.productosFiltrado.push( prod );
-      }
-
-    });
+  private filtrarProductos( termino: string ) {     
+     this.productosFiltrado = [];      
+      termino = termino.toLocaleLowerCase();
+      this.productos.forEach( prod => {
+        const tituloLower = prod.titulo.toLocaleLowerCase();
+        if ( prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf( termino ) >= 0  ) {
+          this.productosFiltrado.push( prod );
+        }        
+      });      
   }
 
 

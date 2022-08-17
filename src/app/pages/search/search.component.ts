@@ -13,12 +13,10 @@ export class SearchComponent implements OnInit {
     public productoService: ProductosService ) { }
 
   ngOnInit(): void {
+    
     this.route.params
-      .subscribe( params => {
-
-        console.log(params['termino']);
+    .subscribe( params => {      
         this.productoService.buscarProducto( params['termino'] );
-
       });
 
   }
